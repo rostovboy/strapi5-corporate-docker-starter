@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Категории"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "longtitle": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "uri": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[a-zA-Z0-9-]+(?:\\/[a-zA-Z0-9-]+)*$"
+    },
+    "published": {
+      "type": "boolean"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "introtext": {
+      "type": "richtext"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo-data",
+      "repeatable": false
+    },
+    "searchable": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

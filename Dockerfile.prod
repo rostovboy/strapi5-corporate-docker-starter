@@ -1,0 +1,30 @@
+# --- Build stage ---
+FROM node:20 AS build
+
+WORKDIR /app
+
+# Установим зависимости
+COPY package*.json ./
+RUN npm ci
+
+# Скопируем исходники
+COPY . .
+
+# Соберём Strapi
+RUN npm run build
+
+# --- Runtime stage ---
+FROM node:20-slim AS runtime
+
+WORKDIR /app
+
+# Только необходимые зависимости (без dev)
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Скопируем всё из build stage
+COPY --from=build /app ./
+
+ENV NODE_ENV=production
+EXPOSE 1337
+CMD ["npm", "run", "start"]
