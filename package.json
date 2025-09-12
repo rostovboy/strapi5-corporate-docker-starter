@@ -1,6 +1,6 @@
 {
   "name": "strapi-corporate-backend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Corporative site backend strapi 5 app",
   "scripts": {
