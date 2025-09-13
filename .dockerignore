@@ -1,18 +1,52 @@
+# Dependencies
 node_modules
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
 .git
 .gitignore
-.env
-.dockerignore
-Dockerfile
 README.md
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Tests
+__tests__
+test
+tests
+
+# Logs
+logs
+*.log
+
+# Strapi
 .strapi
 dist/
 build/
 .nyc_output
 coverage/
+
+# Dumps
 *.tar.gz
 *.zip
-logs/
-*.log
 *.sql
